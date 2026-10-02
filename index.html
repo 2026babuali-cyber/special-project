@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assam Inventory Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">AI</div>
+    <h2>Assam Inventory Management</h2>
+    <p class="login-subtitle">Secure Login</p>
+
+    <form id="loginForm">
+      <div class="field">
+        <label for="loginUsername">Username</label>
+        <input id="loginUsername" type="text" autocomplete="username" placeholder="Enter username" required>
+      </div>
+
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter password" required>
+      </div>
+
+      <button class="login-btn" type="submit">Login</button>
+      <div id="loginError" class="login-error"></div>
+    </form>
+
+    <div class="login-demo">
+      <b>Demo Login</b><br>
+      Username: <code>admin</code><br>
+      Password: <code>password</code>
+    </div>
+  </div>
+</div>
+
+<div class="app" id="appShell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">AI</div>
+      <div><b>Assam Inventory</b><span>Management</span></div>
+    </div>
+    <nav id="nav">
+      <button class="nav-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+      <div class="nav-group"><div class="group-title">👥 Parties</div>
+        <button class="nav-item" data-page="parties">Add / Party List</button>
+        <button class="nav-item" data-page="ledger">Party Ledger</button>
+      </div>
+      <div class="nav-group"><div class="group-title">📦 Inventory</div>
+        <button class="nav-item" data-page="products">Stock / Products</button>
+        <button class="nav-item" data-page="stock">Stock Register</button>
+      </div>
+      <div class="nav-group"><div class="group-title">🛒 Purchase</div>
+        <button class="nav-item" data-page="purchase">New Purchase</button>
+      </div>
+      <div class="nav-group"><div class="group-title">🧾 Sales</div>
+        <button class="nav-item" data-page="sales">New Invoice</button>
+      </div>
+      <div class="nav-group"><div class="group-title">📊 Reports</div>
+        <button class="nav-item" data-page="reports">Reports</button>
+        <button class="nav-item" data-page="activities">Work & Activity</button>
+      </div>
+      <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+    </nav>
+    <button class="logout" onclick="logout()">↪ Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Assam Inventory Management</h1>
+        <small>Guwahati, Assam &nbsp;|&nbsp; 9876543210 &nbsp;|&nbsp; info@assaminventorymanagement.in</small>
+      </div>
+      <div class="top-actions">
+        <label class="fy-label" for="mainFinancialYear">Financial Year</label>
+        <select id="mainFinancialYear" class="fy-select">
+          <option value="2025-26">2025-26</option>
+          <option value="2026-27">2026-27</option>
+          <option value="2027-28">2027-28</option>
+        </select>
+        <div class="user">● <span id="loggedUser">Admin</span> <small>Online</small></div>
+      </div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
